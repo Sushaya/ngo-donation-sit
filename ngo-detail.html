@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Detail</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>NGO Details</h1>
+  </header>
+
+  <main class="ngo-detail">
+    <h2 id="ngo-name">NGO Name</h2>
+    <p id="ngo-description">This is where the detailed description of the NGO goes.</p>
+    <a id="ngo-website" class="btn donate" href="#" target="_blank">Go to Official Website</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NGO Donation Platform</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    if (name === "marpu") {
+      document.getElementById("ngo-name").textContent = "Marpu Foundation";
+      document.getElementById("ngo-description").textContent = "Marpu works to improve rural communities through education, healthcare, and empowerment.";
+      document.getElementById("ngo-website").href = "https://www.marpu.org/";
+    } else if (name === "smile") {
+      document.getElementById("ngo-name").textContent = "Smile Foundation";
+      document.getElementById("ngo-description").textContent = "Smile Foundation helps underprivileged children with healthcare and education support.";
+      document.getElementById("ngo-website").href = "https://www.smilefoundationindia.org/";
+    }
+  </script>
+</body>
+</html>
